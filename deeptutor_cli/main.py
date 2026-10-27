@@ -24,6 +24,7 @@ from .plugin import register as register_plugin
 from .provider_cmd import register as register_provider
 from .session_cmd import register as register_session
 from .skill import register as register_skill
+from .study import register as register_study
 from .workspace_cmd import register as register_workspace
 
 set_mode(RunMode.CLI)
@@ -48,6 +49,7 @@ notebook_app = typer.Typer(help="Manage notebooks and imported markdown records.
 provider_app = typer.Typer(help="Manage provider OAuth login.")
 book_app = typer.Typer(help="Manage interactive Books (BookEngine).")
 workspace_app = typer.Typer(help="Manage the user content workspace.")
+study_app = typer.Typer(help="Headless study backend for an external assistant (no LLM API key).")
 
 app.add_typer(partner_app, name="partner")
 app.add_typer(chat_app, name="chat")
@@ -62,6 +64,7 @@ app.add_typer(notebook_app, name="notebook")
 app.add_typer(provider_app, name="provider")
 app.add_typer(book_app, name="book")
 app.add_typer(workspace_app, name="workspace")
+app.add_typer(study_app, name="study")
 
 register_partner(partner_app)
 register_chat(chat_app)
@@ -75,6 +78,7 @@ register_notebook(notebook_app)
 register_provider(provider_app)
 register_book(book_app)
 register_workspace(workspace_app)
+register_study(study_app)
 register_doctor(app)
 register_init(app)
 

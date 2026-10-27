@@ -218,6 +218,16 @@ EMBEDDING_PROVIDERS: dict[str, EmbeddingProviderSpec] = {
         default_model="nomic-embed-text",
         default_dim=768,
     ),
+    "local": EmbeddingProviderSpec(
+        label="Local CPU (no API key)",
+        adapter="local",
+        mode="local",
+        default_api_base=EMBEDDING_PROVIDER_DEFAULT_ENDPOINTS["local"],
+        keywords=("hashing", "local-hash", "deeptutor-hash"),
+        is_local=True,
+        default_model="hashing",
+        default_dim=384,
+    ),
     "vllm": EmbeddingProviderSpec(
         label="vLLM / LM Studio",
         mode="local",

@@ -44,6 +44,8 @@
 
 ---
 
+> **Grok Bot fork.** This tree is [HKUDS/DeepTutor](https://github.com/HKUDS/DeepTutor) under the Apache-2.0 license, plus a headless study backend an external assistant can drive with no paid LLM key. Setup, the MCP tools, and a study loop are in [GROKBOT.md](GROKBOT.md). Upstream credit and the license are unchanged.
+
 > 🤝 **We welcome any kinds of contributing!** Vote on roadmap items or propose new ones at [`Roadmap`](https://github.com/HKUDS/DeepTutor/issues/498), and see our [Contributing Guide](CONTRIBUTING.md) for branching strategy, coding standards, and how to get started.
 
 ### 📦 Releases

@@ -95,6 +95,7 @@ EMBEDDING_PROVIDER_ALIASES = {
     "lm_studio": "vllm",
     "llama_cpp": "vllm",
     "openai_compatible": "custom",
+    "sentence_transformers": "local",
 }
 
 EMBEDDING_PROVIDER_LABELS = {
@@ -107,6 +108,7 @@ EMBEDDING_PROVIDER_LABELS = {
     "lemonade": "Lemonade Server",
     "siliconflow": "SiliconFlow",
     "ollama": "Ollama",
+    "local": "Local CPU",
     "cohere": "Cohere",
 }
 
@@ -118,6 +120,7 @@ EMBEDDING_PROVIDER_DEFAULT_ENDPOINTS = {
     "cohere": "https://api.cohere.com/v2/embed",
     "jina": "https://api.jina.ai/v1/embeddings",
     "ollama": "http://localhost:11434/api/embed",
+    "local": "local://embeddings",
     "vllm": "http://localhost:8000/v1/embeddings",
     "lemonade": "http://localhost:13305/v1/embeddings",
     "siliconflow": "https://api.siliconflow.cn/v1/embeddings",

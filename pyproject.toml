@@ -100,6 +100,7 @@ dependencies = [
 
 [project.scripts]
 deeptutor = "deeptutor_cli.main:main"
+deeptutor-study-mcp = "deeptutor.agent_study.mcp_server:main"
 deeptutor-export-frontend-contracts = "deeptutor.api.contracts.export:main"
 
 [project.entry-points."deeptutor.reading_extensions"]
@@ -278,6 +279,12 @@ rag-lightrag = ["lightrag-hku==1.5.7"]
 # out of `all`; retrieval lazily falls back to embedding-only ranking when the
 # package or configured model is unavailable.
 rag-rerank = ["sentence-transformers>=3.0.0,<6.0.0; python_version < '3.14'"]
+
+# In-process CPU embeddings for the headless study backend and the ``local``
+# embedding binding. Kept out of ``all`` for the same reason as rag-rerank:
+# torch is large. Without this extra, study indexing uses the hashing embedder
+# and still needs no API key.
+local-embed = ["sentence-transformers>=3.0.0,<6.0.0; python_version < '3.14'"]
 
 # Optional request screening (rate limit, IP allow/deny lists, attack-pattern
 # scan of path, query and headers). Off unless system.json `security_guard`
