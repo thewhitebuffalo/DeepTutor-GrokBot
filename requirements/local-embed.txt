@@ -1,0 +1,4 @@
+# Mirrors pyproject.toml `[project.optional-dependencies].local-embed`.
+# Install deliberately: this pulls the sentence-transformers/torch stack.
+# The study backend runs without it, using the built-in hashing embedder.
+sentence-transformers>=3.0.0,<6.0.0; python_version < "3.14"

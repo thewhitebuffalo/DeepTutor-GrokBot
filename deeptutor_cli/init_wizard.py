@@ -98,6 +98,7 @@ FEATURED_EMBEDDING_PROVIDERS: tuple[str, ...] = (
     "azure_openai",
     "vllm",  # also covers LM Studio, llama.cpp via the same OpenAI-compatible adapter
     "ollama",
+    "local",  # in-process hashing or sentence-transformers; no API key
 )
 
 # Fallback model lists used only when live ``/models`` fetch fails. For
@@ -117,6 +118,7 @@ EMBEDDING_FALLBACK_MODELS: dict[str, tuple[str, ...]] = {
     "openrouter": ("openai/text-embedding-3-large",),
     "vllm": ("BAAI/bge-m3",),
     "ollama": ("nomic-embed-text", "mxbai-embed-large", "snowflake-arctic-embed"),
+    "local": ("hashing", "BAAI/bge-small-en-v1.5"),
 }
 
 

@@ -1,8 +1,9 @@
 """Unified embedding client and adapters for all DeepTutor modules.
 
 Supported bindings are resolved by ``services.config.provider_runtime`` and
-currently include openai, custom, azure_openai, cohere, jina, ollama, vllm,
-siliconflow, aliyun, openrouter, plus legacy custom_openai_sdk configs.
+currently include openai, custom, azure_openai, cohere, jina, ollama, local,
+vllm, siliconflow, aliyun, openrouter, plus legacy custom_openai_sdk configs.
+``local`` embeds in-process (hashing, or sentence-transformers) and needs no API key.
 """
 
 from .adapters import (
@@ -13,6 +14,7 @@ from .adapters import (
     EmbeddingRequest,
     EmbeddingResponse,
     JinaEmbeddingAdapter,
+    LocalEmbeddingAdapter,
     OllamaEmbeddingAdapter,
     OpenAICompatibleEmbeddingAdapter,
     OpenAISDKEmbeddingAdapter,
@@ -37,5 +39,6 @@ __all__ = [
     "DashScopeMultiModalEmbeddingAdapter",
     "CohereEmbeddingAdapter",
     "JinaEmbeddingAdapter",
+    "LocalEmbeddingAdapter",
     "OllamaEmbeddingAdapter",
 ]
